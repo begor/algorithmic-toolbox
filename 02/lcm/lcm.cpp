@@ -19,10 +19,7 @@ int gcd(int a, int b) {
 }
 
 long long lcm(int a, int b) {
-    long long ab_gcd = gcd(a, b);
-    long long product = a * b;
-
-    return product / ab_gcd;
+    return (long long) a * b / gcd(a, b);
 }
 
 
