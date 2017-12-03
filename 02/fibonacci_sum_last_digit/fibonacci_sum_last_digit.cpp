@@ -56,9 +56,8 @@ int fibonacci_sum(long long n) {
     for (int i = 1; i < (n + 2) % period; ++i) {
         long long next = (previous + current) % 10;
 
-        // Suppose Fi-1 = 45 and Fi = 55, so their sum is 100.
-        // 100 % 10 = 0, but this is not enough for us, we should carry overflow.  
-        if (next == 0) {
+        // Suppose Fi-1 = 45 and Fi = 55, so sum of their last digits is 10, not 0. 
+        if (previous + current == 10) {
             next = 10;
         }
 
